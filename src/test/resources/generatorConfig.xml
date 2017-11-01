@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration >
+	<classPathEntry location="E:/lee/solft/repository/mysql/mysql-connector-java/5.1.30/mysql-connector-java-5.1.30.jar" />
+  	<!-- <context id="mysql"  defaultModelType="flat" targetRuntime="org.generator.MyIntrospectedTable"> -->
+  	<context id="mysql"  targetRuntime="MyBatis3">
+  		<plugin type="org.generator.MySerializablePlugin" />  
+	    <commentGenerator type="org.generator.MyCommentGenerator">
+	    </commentGenerator>
+	    <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost/authority" userId="root" password="123456" />
+	    <javaTypeResolver >
+	        <property name="forceBigDecimals" value="false" />
+	    </javaTypeResolver>
+	    
+	    <javaModelGenerator targetPackage="com.lee.gps.pojo" targetProject="om">
+	    	<property name="enableSubPackages" value="true" />
+	        <property name="trimStrings" value="true" />
+	    </javaModelGenerator>
+	    
+	    <sqlMapGenerator targetPackage="com.lee.gps.mapper" targetProject="om">
+	   		<property name="enableSubPackages" value="true" />
+	    </sqlMapGenerator>
+	    <javaClientGenerator targetPackage="com.lee.gps.dao"  targetProject="om" type="XMLMAPPER">
+	   		<property name="enableSubPackages" value="true" />
+	   		<property name="exampleMethodVisibility" value="public"/>
+	    </javaClientGenerator>
+	    
+	    <table tableName="gps_car" domainObjectName="GpsCar"   schema="" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+	    </table>
+  	</context>
+</generatorConfiguration>
